@@ -1,0 +1,175 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --card-border: #d3d9e0;
+  --text-primary: #2c3e50;
+  --accent: #337ab7;
+  --experience-bg: #ecf0f1;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.navbar-inverse {
+  background-color: #2f3d4a;
+  border-color: #272f36;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.jumbotron {
+  padding: 0;
+  margin-bottom: 30px;
+  background: transparent;
+}
+
+.banner img {
+  width: 100%;
+  height: 350px;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.profile-section {
+  padding: 50px 20px;
+  background-color: var(--experience-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.profile-section h3 {
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: linear-gradient(135deg, var(--accent), #2a5a9b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5em;
+}
+
+.profile-card {
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h4 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), #2a5a9b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.profile-card h4:hover {
+  transform: translateX(5px);
+}
+
+.skill-bar {
+  margin-bottom: 15px;
+  background-color: #e8f1f8;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #2a5a9b);
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+footer.container-fluid {
+  padding: 40px 20px;
+  background-color: #2f3d4a;
+  color: #ffffff;
+  margin-top: 40px;
+  border-radius: 12px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 300px;
+  min-width: 300px;
+}
+
+footer h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ecf0f1;
+  font-size: 1.5em;
+}
+
+footer a {
+  color: #a8c4e2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    margin-bottom: 25px;
+  }
+
+  .profile-section h3 {
+    font-size: 2em;
+  }
+
+  .footer-column {
+    min-width: 250px;
+  }
+}
