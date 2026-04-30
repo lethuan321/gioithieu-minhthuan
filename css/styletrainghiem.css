@@ -150,6 +150,8 @@ footer.container-fluid {
 .footer-column {
   flex: 1 1 300px;
   min-width: 300px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 footer h3 {
@@ -217,6 +219,13 @@ video:hover {
   }
 }
 
+@media (max-width: 992px) {
+  .footer-column {
+    flex: 1 1 260px;
+    min-width: 260px;
+  }
+}
+
 @media (max-width: 768px) {
   .container-fluid {
     padding-left: 14px;
@@ -252,28 +261,104 @@ video:hover {
   .footer-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
   .footer-column {
     width: 100%;
     min-width: auto;
+    flex: 1 1 auto;
   }
 }
 
 @media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .banner img {
     max-height: 200px;
   }
 
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .profile-section {
+    padding: 24px 10px;
+  }
+
   .profile-section h3 {
     font-size: 1.9rem;
+    margin-bottom: 24px;
   }
 
   .profile-card {
     padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .profile-card h4 {
+    font-size: 1.2rem;
   }
 
   video {
     max-height: 320px;
+  }
+
+  .video-container {
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+
+  .video-container h4 {
+    font-size: 1.2rem;
+  }
+
+  footer.container-fluid {
+    padding: 24px 10px;
+  }
+
+  footer h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 384px) {
+  .container-fluid {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .profile-section {
+    padding: 18px 8px;
+  }
+
+  .profile-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .profile-card {
+    padding: 14px;
+  }
+
+  video {
+    max-height: 280px;
+  }
+
+  .video-container {
+    padding: 14px;
+  }
+
+  footer.container-fluid {
+    padding: 20px 8px;
   }
 }

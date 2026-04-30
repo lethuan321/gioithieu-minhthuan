@@ -161,6 +161,8 @@ footer.container-fluid {
 .footer-column {
   flex: 1 1 300px;
   min-width: 300px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 footer h3 {
@@ -187,6 +189,13 @@ footer a:hover {
 
   .profile-section {
     padding: 38px 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-column {
+    flex: 1 1 260px;
+    min-width: 260px;
   }
 }
 
@@ -221,32 +230,96 @@ footer a:hover {
   .footer-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
   .footer-column {
     width: 100%;
     min-width: auto;
+    flex: 1 1 auto;
   }
 }
 
 @media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .banner img {
     max-height: 200px;
   }
 
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .profile-section {
+    padding: 24px 10px;
+  }
+
   .profile-section h3 {
     font-size: 1.9rem;
+    margin-bottom: 24px;
   }
 
   .profile-card {
     padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .profile-card h4 {
+    font-size: 1.2rem;
   }
 
   .skill-bar {
     height: 24px;
+    margin-bottom: 12px;
   }
 
   .skill-bar-fill {
     font-size: 0.85em;
+  }
+
+  footer.container-fluid {
+    padding: 24px 10px;
+  }
+
+  footer h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 384px) {
+  .container-fluid {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .profile-section {
+    padding: 18px 8px;
+  }
+
+  .profile-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .profile-card {
+    padding: 14px;
+  }
+
+  .skill-bar {
+    height: 22px;
+  }
+
+  footer.container-fluid {
+    padding: 20px 8px;
   }
 }
