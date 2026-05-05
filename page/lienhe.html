@@ -100,7 +100,6 @@
 
 <script>
 function xemTruoc(event) {
-  console.log("ĐÃ CLICK");
   event.preventDefault(); // chặn reload
 
   let name = document.getElementById("name").value;
@@ -116,6 +115,14 @@ function xemTruoc(event) {
   `;
 
   document.getElementById("previewBox").style.display = "block";
+}
+
+function quayLai() {
+  document.getElementById("previewBox").style.display = "none";
+}
+
+function xacNhan() {
+  window.location.href = "thanhcong.html";
 }
 </script>
 
