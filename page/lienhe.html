@@ -67,11 +67,20 @@
           <label for="message">Nội dung</label>
           <textarea id="message" class="form-control" rows="6" placeholder="Viết ý kiến hoặc câu hỏi của bạn"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Gửi ý kiến</button>
+        <button type="button" class="btn btn-primary" onclick="xemTruoc()">Gửi ý kiến</button>
       </form>
+
+      <div id="previewBox" style="display:none; margin-top:20px; border:1px solid #ccc; padding:15px;">
+      <h4>Xác nhận thông tin</h4>
+      <p id="previewContent"></p>
+
+      <button class="btn btn-success" onclick="xacNhan()">Đồng ý</button>
+      <button class="btn btn-default" onclick="quayLai()">Quay lại</button>
+      </div>
     </div>
   </div>
 </div>
+
 
 <footer class="container-fluid text-center">
   <div class="footer-row">
@@ -87,6 +96,39 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+function xemTruoc() {
+  // Lấy dữ liệu
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  // Hiển thị lại bằng innerHTML
+  let content = `
+    <b>Họ tên:</b> ${name} <br>
+    <b>Email:</b> ${email} <br>
+    <b>Chủ đề:</b> ${subject} <br>
+    <b>Nội dung:</b> ${message}
+  `;
+
+  document.getElementById("previewContent").innerHTML = content;
+
+  // Hiện box preview
+  document.getElementById("previewBox").style.display = "block";
+}
+
+function quayLai() {
+  document.getElementById("previewBox").style.display = "none";
+}
+
+function xacNhan() {
+  // chuyển trang
+  window.location.href = "thanhcong.html";
+}
+</script>
 
 </body>
 </html>
