@@ -107,6 +107,20 @@ function xemTruoc(event) {
   let subject = document.getElementById("subject").value;
   let message = document.getElementById("message").value;
 
+    // Điều kiện bắt buộc có nội dung
+  if (message === "") {
+    alert("Vui lòng nhập nội dung trước khi gửi!");
+    document.getElementById("message").focus();
+    return;
+  }
+
+  // (khuyến khích thêm)
+  if (name === "" || email === "") {
+    alert("Vui lòng nhập đầy đủ họ tên và email!");
+    return;
+  }
+
+
   document.getElementById("previewContent").innerHTML = `
     <b>Họ tên:</b> ${name}<br>
     <b>Email:</b> ${email}<br>
