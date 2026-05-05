@@ -88,19 +88,35 @@
       return;
     }
 
+    function applyFilter(filter) {
+      const nextFilter = filter || "all";
+
+      filterButtons.forEach(function (item) {
+        item.classList.toggle("is-active", item.dataset.filter === nextFilter);
+      });
+
+      galleryItems.forEach(function (item) {
+        item.hidden = nextFilter !== "all" && item.dataset.category !== nextFilter;
+      });
+    }
+
     filterButtons.forEach(function (button) {
       button.addEventListener("click", function () {
-        const filter = button.dataset.filter;
-
-        filterButtons.forEach(function (item) {
-          item.classList.toggle("is-active", item === button);
-        });
-
-        galleryItems.forEach(function (item) {
-          item.hidden = filter !== "all" && item.dataset.category !== filter;
-        });
+        applyFilter(button.dataset.filter);
+        const url = new URL(window.location.href);
+        url.searchParams.set("filter", button.dataset.filter);
+        window.history.replaceState({}, "", url);
       });
     });
+
+    const initialFilter = new URLSearchParams(window.location.search).get("filter");
+    const hasInitialFilter = Array.from(filterButtons).some(function (button) {
+      return button.dataset.filter === initialFilter;
+    });
+
+    if (hasInitialFilter) {
+      applyFilter(initialFilter);
+    }
 
     if (!lightbox) {
       return;
