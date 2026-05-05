@@ -50,7 +50,7 @@
     </div>
     <div class="feedback-card">
       <h4>Gửi ý kiến của bạn</h4>
-      <form>    
+      <form onsubmit="xemTruoc(event)">   
         <div class="form-group">
           <label for="name">Họ và tên</label>
           <input type="text" id="name" class="form-control" placeholder="Nhập họ tên">
@@ -67,7 +67,7 @@
           <label for="message">Nội dung</label>
           <textarea id="message" class="form-control" rows="6" placeholder="Viết ý kiến hoặc câu hỏi của bạn"></textarea>
         </div>
-        <button type="button" class="btn btn-primary" onclick="xemTruoc()">Gửi ý kiến</button>
+        <button type="submit" class="btn btn-primary">Gửi ý kiến</button>
       </form>
 
       <div id="previewBox" style="display:none; margin-top:20px; border:1px solid #ccc; padding:15px;">
@@ -99,19 +99,15 @@
 
 
 <script>
-function xemTruoc() {
+function xemTruoc(event) {
+  console.log("ĐÃ CLICK");
+  event.preventDefault(); // chặn reload
+
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let subject = document.getElementById("subject").value;
   let message = document.getElementById("message").value;
 
-  // kiểm tra đơn giản
-  if (name === "" || email === "" || message === "") {
-    alert("Vui lòng nhập đầy đủ thông tin!");
-    return;
-  }
-
-  // hiển thị bằng innerHTML
   document.getElementById("previewContent").innerHTML = `
     <b>Họ tên:</b> ${name}<br>
     <b>Email:</b> ${email}<br>
@@ -120,14 +116,6 @@ function xemTruoc() {
   `;
 
   document.getElementById("previewBox").style.display = "block";
-}
-
-function quayLai() {
-  document.getElementById("previewBox").style.display = "none";
-}
-
-function xacNhan() {
-  window.location.href = "thanhcong.html";
 }
 </script>
 
