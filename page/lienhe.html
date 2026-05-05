@@ -3,13 +3,20 @@
 <head>
   <title>Liên hệ - Minh Thuận</title>
   <meta charset="utf-8">
+  <meta name="description" content="Thông tin liên hệ và biểu mẫu gửi ý kiến cho Lê Minh Thuận.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/fav/favicon-16x16.png">
+  <link rel="manifest" href="../img/fav/site.webmanifest">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/stylelienhe.css">
+  <link rel="stylesheet" href="../css/theme.css">
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script defer src="../js/site.js"></script>
 </head>
-<body> 
+<body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -26,6 +33,10 @@
         <li><a href="trainghiem.html">Trải nghiệm</a></li>
         <li><a href="chiase.html">Chia sẻ kinh nghiệm</a></li>
         <li><a href="nlcn.html">Năng lực cá nhân</a></li>
+        <li><a href="duan.html">Dự án</a></li>
+        <li><a href="hoso.html">Hồ sơ</a></li>
+        <li><a href="thuvien.html">Thư viện</a></li>
+        <li><a href="tainguyen.html">Tài nguyên</a></li>
         <li class="active"><a href="lienhe.html" aria-current="page">Liên hệ</a></li>
       </ul>
     </div>
@@ -50,7 +61,7 @@
     </div>
     <div class="feedback-card">
       <h4>Gửi ý kiến của bạn</h4>
-      <form onsubmit="xemTruoc(event)">   
+      <form onsubmit="xemTruoc(event)">
         <div class="form-group">
           <label for="name">Họ và tên</label>
           <input type="text" id="name" name="name" class="form-control" placeholder="Nhập họ tên" autocomplete="name" required>
@@ -71,16 +82,16 @@
       </form>
 
       <div id="previewBox" class="preview-box" hidden>
-      <h4>Xác nhận thông tin</h4>
-      <p id="previewContent"></p>
+        <h4>Xác nhận thông tin</h4>
+        <p id="previewContent"></p>
+        <p class="preview-note">Khi bấm Đồng ý, trình gửi email trên thiết bị sẽ mở với nội dung đã điền sẵn.</p>
 
-      <button type="button" class="btn btn-success" onclick="xacNhan()">Đồng ý</button>
-      <button type="button" class="btn btn-default" onclick="quayLai()">Quay lại</button>
+        <button type="button" class="btn btn-success" onclick="xacNhan()">Đồng ý</button>
+        <button type="button" class="btn btn-default" onclick="quayLai()">Quay lại</button>
       </div>
     </div>
   </div>
 </div>
-
 
 <footer class="container-fluid text-center">
   <div class="footer-row">
@@ -97,29 +108,25 @@
   </div>
 </footer>
 
-
 <script>
 function xemTruoc(event) {
-  event.preventDefault(); // chặn reload
+  event.preventDefault();
 
   let name = document.getElementById("name").value.trim();
   let email = document.getElementById("email").value.trim();
   let subject = document.getElementById("subject").value.trim();
   let message = document.getElementById("message").value.trim();
 
-    // Điều kiện bắt buộc có nội dung
   if (message === "") {
     alert("Vui lòng nhập nội dung trước khi gửi!");
     document.getElementById("message").focus();
     return;
   }
 
-  // (khuyến khích thêm)
   if (name === "" || email === "") {
     alert("Vui lòng nhập đầy đủ họ tên và email!");
     return;
   }
-
 
   document.getElementById("previewContent").innerHTML = `
     <b>Họ tên:</b> ${escapeHTML(name)}<br>
@@ -136,7 +143,16 @@ function quayLai() {
 }
 
 function xacNhan() {
-  window.location.href = "thanhcong.html";
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let subject = document.getElementById("subject").value.trim() || "Góp ý từ website cá nhân";
+  let message = document.getElementById("message").value.trim();
+  let body = `Họ tên: ${name}\nEmail: ${email}\n\nNội dung:\n${message}`;
+
+  window.location.href = `mailto:lmt207tv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  setTimeout(function () {
+    window.location.href = "thanhcong.html";
+  }, 800);
 }
 
 function escapeHTML(value) {

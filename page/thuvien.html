@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>Thư viện - Minh Thuận</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Thư viện hình ảnh hoạt động học tập, thể thao, công việc và đời sống cá nhân của Lê Minh Thuận.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/fav/favicon-16x16.png">
+  <link rel="manifest" href="../img/fav/site.webmanifest">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/stylethuvien.css">
+  <link rel="stylesheet" href="../css/theme.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script defer src="../js/site.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-label="Mở menu điều hướng">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html">Minh Thuận</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Giới thiệu</a></li>
+        <li><a href="trainghiem.html">Trải nghiệm</a></li>
+        <li><a href="chiase.html">Chia sẻ kinh nghiệm</a></li>
+        <li><a href="nlcn.html">Năng lực cá nhân</a></li>
+        <li><a href="duan.html">Dự án</a></li>
+        <li><a href="hoso.html">Hồ sơ</a></li>
+        <li class="active"><a href="thuvien.html" aria-current="page">Thư viện</a></li>
+        <li><a href="tainguyen.html">Tài nguyên</a></li>
+        <li><a href="lienhe.html">Liên hệ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="container-fluid gallery-hero">
+    <h1>Thư viện hình ảnh</h1>
+    <p>Một góc lưu lại các hoạt động học tập, thể thao, công việc và đời sống. Bạn có thể lọc theo nhóm hoặc bấm vào ảnh để xem lớn hơn.</p>
+  </section>
+
+  <section class="container-fluid gallery-section">
+    <div class="gallery-filters" aria-label="Bộ lọc thư viện">
+      <button class="gallery-filter is-active" type="button" data-filter="all">Tất cả</button>
+      <button class="gallery-filter" type="button" data-filter="thethao">Thể thao</button>
+      <button class="gallery-filter" type="button" data-filter="hoctap">Học tập</button>
+      <button class="gallery-filter" type="button" data-filter="doisong">Đời sống</button>
+      <button class="gallery-filter" type="button" data-filter="congviec">Công việc</button>
+    </div>
+
+    <div class="gallery-grid">
+      <button class="gallery-item" type="button" data-category="thethao" data-title="Hoạt động võ thuật">
+        <img src="../img/hinhanh-(1).jpg" alt="Hoạt động võ thuật" loading="lazy">
+        <span class="gallery-caption"><strong>Võ thuật</strong><span>Rèn luyện kỷ luật và sức bền</span></span>
+      </button>
+      <button class="gallery-item" type="button" data-category="doisong" data-title="Khoảnh khắc đi biển">
+        <img src="../img/hinhanh-(6).jpg" alt="Khoảnh khắc đi biển" loading="lazy">
+        <span class="gallery-caption"><strong>Đi biển</strong><span>Thư giãn sau những ngày học tập</span></span>
+      </button>
+      <button class="gallery-item" type="button" data-category="hoctap" data-title="Giáo dục quốc phòng">
+        <img src="../img/hinhanh-(4).jpg" alt="Hoạt động giáo dục quốc phòng" loading="lazy">
+        <span class="gallery-caption"><strong>Quốc phòng</strong><span>Một trải nghiệm học tập đáng nhớ</span></span>
+      </button>
+      <button class="gallery-item" type="button" data-category="thethao" data-title="Đá bóng">
+        <img src="../img/hinhanh-(5).jpg" alt="Hoạt động đá bóng" loading="lazy">
+        <span class="gallery-caption"><strong>Đá bóng</strong><span>Giữ tinh thần năng động</span></span>
+      </button>
+      <button class="gallery-item" type="button" data-category="hoctap" data-title="Coding">
+        <img src="../img/hinhanh-(9).jpg" alt="Làm việc với máy tính" loading="lazy">
+        <span class="gallery-caption"><strong>Coding</strong><span>Thực hành và tự học công nghệ</span></span>
+      </button>
+      <button class="gallery-item" type="button" data-category="congviec" data-title="Đi làm part-time">
+        <img src="../img/hinhanh-(11).jpg" alt="Công việc part-time" loading="lazy">
+        <span class="gallery-caption"><strong>Part-time</strong><span>Rèn trách nhiệm và giao tiếp</span></span>
+      </button>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="galleryLightbox" hidden>
+  <button class="lightbox-close" type="button" aria-label="Đóng ảnh">&times;</button>
+  <div class="lightbox-content">
+    <img src="../img/hinhanh-(1).jpg" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <div class="footer-row">
+    <div class="footer-column">
+      <h3>Thông tin liên hệ</h3>
+      <p>Người soạn: Lê Minh Thuận</p>
+      <p>Email: lmt207tv@gmail.com</p>
+      <p>Hotline: 0376271084</p>
+    </div>
+    <div class="footer-column">
+      <h3>Liên kết mạng xã hội</h3>
+      <p>
+        <a href="https://www.facebook.com/share/1YWHqkTp59/?mibextid=wwXIfr">Facebook</a> |
+        <a href="https://zalo.me/84376271084">Zalo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

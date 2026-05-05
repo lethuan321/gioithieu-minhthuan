@@ -1,0 +1,195 @@
+:root {
+  --dark-bg: #101820;
+  --dark-surface: #182331;
+  --dark-surface-soft: #223145;
+  --dark-border: #34465d;
+  --dark-text: #eef5fb;
+  --dark-muted: #b8c7d6;
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.dark-mode {
+  --primary-bg: var(--dark-bg);
+  --card-bg: var(--dark-surface);
+  --form-bg: var(--dark-surface);
+  --experience-bg: #13202c;
+  --card-border: var(--dark-border);
+  --text-primary: var(--dark-text);
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark-mode .navbar-inverse,
+body.dark-mode footer.container-fluid {
+  background-color: #0d141c;
+  border-color: #0d141c;
+}
+
+body.dark-mode .profile-section,
+body.dark-mode .intro-section,
+body.dark-mode .contact-section,
+body.dark-mode .success-box {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+}
+
+body.dark-mode .profile-card,
+body.dark-mode .contact-card,
+body.dark-mode .feedback-card,
+body.dark-mode .highlight-item,
+body.dark-mode .project-card,
+body.dark-mode .project-hero,
+body.dark-mode .project-panel,
+body.dark-mode .resume-card,
+body.dark-mode .resume-contact div,
+body.dark-mode .timeline-item,
+body.dark-mode .gallery-item,
+body.dark-mode .resource-card,
+body.dark-mode .preview-box {
+  background-color: var(--dark-surface-soft);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+body.dark-mode p,
+body.dark-mode .intro-text,
+body.dark-mode .highlight-item span,
+body.dark-mode .contact-card p,
+body.dark-mode .preview-note,
+body.dark-mode .project-meta,
+body.dark-mode .project-card li,
+body.dark-mode .project-panel li,
+body.dark-mode .resume-card p,
+body.dark-mode .timeline-item p,
+body.dark-mode .gallery-caption span,
+body.dark-mode .resource-card span,
+body.dark-mode .resource-url {
+  color: var(--dark-muted);
+}
+
+body.dark-mode .form-control,
+body.dark-mode textarea {
+  background-color: #111b26;
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+body.dark-mode .btn-default {
+  background-color: transparent;
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+body.dark-mode .project-tags span {
+  background-color: #14283a;
+  color: #9fd0ff;
+}
+
+body.dark-mode .tool-list span,
+body.dark-mode .gallery-filter,
+body.dark-mode .quick-links a {
+  background-color: #14283a;
+  border-color: var(--dark-border);
+  color: #d7eaff;
+}
+
+body.dark-mode .gallery-filter.is-active {
+  background-color: #337ab7;
+  border-color: #337ab7;
+  color: #ffffff;
+}
+
+body.dark-mode .lightbox-content,
+body.dark-mode .lightbox-close {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+}
+
+body.dark-mode .lightbox-caption {
+  color: var(--dark-text);
+}
+
+.site-tools {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-toggle,
+.back-to-top {
+  min-width: 46px;
+  height: 46px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background-color: #337ab7;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.back-to-top:hover {
+  background-color: #255f91;
+  transform: translateY(-2px);
+}
+
+.back-to-top {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-tools {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .theme-toggle,
+  .back-to-top {
+    height: 42px;
+    min-width: 42px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+  }
+}

@@ -56,6 +56,85 @@ body {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
 }
 
+.intro-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px 22px;
+  margin-bottom: 28px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.intro-content {
+  flex: 1 1 520px;
+}
+
+.intro-label {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.intro-content h1 {
+  margin: 0 0 12px;
+  font-size: 3.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.intro-text {
+  max-width: 680px;
+  margin-bottom: 18px;
+  color: #44586b;
+  font-size: 1.08rem;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.intro-actions .btn {
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 700;
+}
+
+.intro-highlights {
+  flex: 0 1 360px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-content: stretch;
+}
+
+.highlight-item {
+  min-height: 110px;
+  padding: 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background-color: #f7f9fc;
+}
+
+.highlight-item strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.highlight-item span {
+  display: block;
+  color: #53677a;
+  font-size: 0.95rem;
+}
+
 img {
   width: 100%;
   max-height: 500px;
@@ -145,6 +224,15 @@ footer a:hover {
     padding: 34px 14px;
   }
 
+  .intro-section {
+    flex-direction: column;
+    padding: 28px 18px;
+  }
+
+  .intro-highlights {
+    flex-basis: auto;
+  }
+
   .profile-card {
     padding: 18px;
   }
@@ -182,6 +270,22 @@ footer a:hover {
 
   .profile-section {
     padding: 28px 12px;
+  }
+
+  .intro-section {
+    padding: 24px 14px;
+  }
+
+  .intro-content h1 {
+    font-size: 2.7rem;
+  }
+
+  .intro-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-item {
+    min-height: auto;
   }
 
   .profile-section h3 {
@@ -223,6 +327,23 @@ footer a:hover {
 
   .profile-section {
     padding: 20px 10px;
+  }
+
+  .intro-section {
+    padding: 20px 12px;
+  }
+
+  .intro-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .intro-actions .btn {
+    width: 100%;
+    text-align: center;
   }
 
   .profile-section h3 {

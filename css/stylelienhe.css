@@ -165,6 +165,12 @@ textarea:focus {
   margin-top: 8px;
 }
 
+.preview-note {
+  margin-top: 12px;
+  color: #53677a;
+  font-size: 0.95rem;
+}
+
 footer.container-fluid {
   padding: 40px 18px;
   background-color: #2f3d4a;

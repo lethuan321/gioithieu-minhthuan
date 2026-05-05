@@ -1,0 +1,265 @@
+:root {
+  --primary-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --card-border: #d3d9e0;
+  --text-primary: #2c3e50;
+  --accent: #337ab7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+.container-fluid {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navbar-inverse {
+  background-color: #2f3d4a;
+  border-color: #272f36;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  padding: 12px 16px;
+}
+
+.resume-hero,
+.resume-section {
+  margin-bottom: 28px;
+  padding: 34px 22px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.resume-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.resume-label {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume-hero h1 {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.resume-hero p {
+  max-width: 760px;
+  color: #44586b;
+  font-size: 1.08rem;
+}
+
+.resume-contact {
+  display: grid;
+  gap: 12px;
+}
+
+.resume-contact div {
+  padding: 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background-color: #f7f9fc;
+}
+
+.resume-contact strong {
+  display: block;
+  color: var(--accent);
+}
+
+.resume-section h2 {
+  margin: 0 0 22px;
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.resume-card,
+.timeline-item {
+  padding: 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background-color: var(--card-bg);
+}
+
+.resume-card h3,
+.timeline-item h3 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.resume-card p,
+.timeline-item p {
+  color: #44586b;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.timeline-year {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-list span {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background-color: #e8f1f8;
+  color: #245d8e;
+  font-weight: 700;
+}
+
+footer.container-fluid {
+  padding: 40px 18px;
+  background-color: #2f3d4a;
+  color: #ffffff;
+  margin-top: 30px;
+  border-radius: 14px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 300px;
+  min-width: 300px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+footer h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ecf0ff;
+}
+
+footer a {
+  color: #a8c4e2;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .resume-hero,
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-inverse .navbar-nav > li {
+    float: none;
+    display: block;
+  }
+
+  .resume-hero,
+  .resume-section {
+    padding: 28px 14px;
+  }
+
+  .resume-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .footer-column {
+    width: 100%;
+    min-width: auto;
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .resume-hero,
+  .resume-section {
+    padding: 22px 12px;
+  }
+
+  .resume-hero h1 {
+    font-size: 2rem;
+  }
+
+  .resume-section h2 {
+    font-size: 1.45rem;
+    letter-spacing: 0.04em;
+  }
+}
