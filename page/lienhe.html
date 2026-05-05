@@ -100,23 +100,25 @@
 
 <script>
 function xemTruoc() {
-  // Lấy dữ liệu
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let subject = document.getElementById("subject").value;
   let message = document.getElementById("message").value;
 
-  // Hiển thị lại bằng innerHTML
-  let content = `
-    <b>Họ tên:</b> ${name} <br>
-    <b>Email:</b> ${email} <br>
-    <b>Chủ đề:</b> ${subject} <br>
+  // kiểm tra đơn giản
+  if (name === "" || email === "" || message === "") {
+    alert("Vui lòng nhập đầy đủ thông tin!");
+    return;
+  }
+
+  // hiển thị bằng innerHTML
+  document.getElementById("previewContent").innerHTML = `
+    <b>Họ tên:</b> ${name}<br>
+    <b>Email:</b> ${email}<br>
+    <b>Chủ đề:</b> ${subject}<br>
     <b>Nội dung:</b> ${message}
   `;
 
-  document.getElementById("previewContent").innerHTML = content;
-
-  // Hiện box preview
   document.getElementById("previewBox").style.display = "block";
 }
 
@@ -125,7 +127,6 @@ function quayLai() {
 }
 
 function xacNhan() {
-  // chuyển trang
   window.location.href = "thanhcong.html";
 }
 </script>
