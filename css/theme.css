@@ -193,3 +193,80 @@ body.dark-mode .lightbox-caption {
     font-size: 0.9rem;
   }
 }
+
+/* Social QR Codes */
+.social-qr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-border, #d3d9e0);
+}
+.qr-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.qr-img:hover {
+  transform: scale(1.05);
+}
+
+/* Map for contact page */
+.map-section {
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--card-bg, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  border: 1px solid var(--card-border, #d3d9e0);
+}
+.map-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent, #337ab7);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Dark mode support */
+body.dark-mode .social-qr {
+  border-top-color: var(--dark-border, #34465d);
+}
+body.dark-mode .qr-img {
+  filter: brightness(1.1) contrast(1.1);
+}
+body.dark-mode .map-section {
+  background: var(--dark-surface-soft, #182331);
+  border-color: var(--dark-border, #34465d);
+}
+
+@media (max-width: 576px) {
+  .qr-img {
+    width: 80px;
+    height: 80px;
+  }
+  .map-container {
+    height: 300px;
+  }
+}
